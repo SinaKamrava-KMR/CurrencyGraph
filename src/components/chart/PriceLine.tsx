@@ -23,7 +23,7 @@ const PriceLine = () => {
 
   useEffect(() => {
     const handleMouseMove = (e:MouseEvent) => {
-      console.log(e);
+      // console.log(e);
       if (e.clientY > 200) {
         setPosition(e.clientX)
       } else {

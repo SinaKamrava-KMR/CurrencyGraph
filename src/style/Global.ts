@@ -23,7 +23,11 @@ body {
   color: white;
 }
 
-
+@media (min-width:810px) {
+  body{
+    height: 100%;
+  }
+}
 
 
 body::-webkit-scrollbar{

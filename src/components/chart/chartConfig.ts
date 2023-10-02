@@ -37,13 +37,14 @@ export const data:ChartData<"line"> = {
         50, 100, 23, 32, 50, 18, 87, 120, 20, 50, 10, 30, 50, 100, 23, 32, 50, 18, 87, 120, 20, 50, 10, 30,
         50, 100, 23, 32, 50, 18, 87,
       ],
-      pointStyle:false
+      pointStyle: false,
     },
   ],
 };
 
 export const options: ChartOptions<"line"> = {
   responsive: true,
+  events: ['mousemove'],
   plugins: {
     zoom: {
       pan: {
@@ -51,12 +52,15 @@ export const options: ChartOptions<"line"> = {
         mode: "x",
       },
     },
+    tooltip: {
+      enabled: false
+    }
   },
 
   scales: {
     x: {
       min: 0,
-      max: 12,
+      max: 15,
       grid: {
         display: false,
       },
@@ -83,10 +87,14 @@ export const options: ChartOptions<"line"> = {
       },
     },
   },
-
-  // onHover: function(evt, activeElements) {
-  //   console.log(evt);
-  //   console.log(activeElements);
-
-  // }
+  hover: {
+    mode: 'index',
+    intersect: false
+ },
+  onHover: function(evt, activeElements) {
+    // console.log(evt);
+    activeElements[0].element.options.pointStyle = true;
+    
+  },
+  
 };
