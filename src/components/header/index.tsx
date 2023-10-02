@@ -4,7 +4,6 @@ import Options from "./Options";
 const Wrapper = styled.header`
   background-image: linear-gradient(170deg, #af60b9, #9e6bc1, #7f79c8);
   padding: 2rem;
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
