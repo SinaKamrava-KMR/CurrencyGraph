@@ -66,22 +66,21 @@ const CurrencyChart = () => {
   const lineRef = useRef<ChartJS<"line", number[], string>>(null);
   
   useEffect(() => {
-    console.log(lineRef.current!.chartArea.width);
- 
+    console.log(lineRef.current!.scales.y);
   }, []);
 
   return (
     <ChartAreaWrapper>
       <Labels>
         {labels.map((item, idx) => (
-          <Item active={idx == 4} key={idx}>
+          <Item active={idx == 7} key={idx}>
             {item.toUpperCase()}
           </Item>
         ))}
       </Labels>
       <Flex1 />
       <Line ref={lineRef} data={data} options={options} />
-      <PriceLine/>
+      <PriceLine  />
     </ChartAreaWrapper>
   );
 };

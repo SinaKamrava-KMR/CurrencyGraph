@@ -1,10 +1,11 @@
 import { ChartData, ChartOptions } from "chart.js";
 
 import { Context } from "chartjs-plugin-datalabels";
+import { datasets } from "../../data/datasets";
 
-const labels = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22,
-];
+const labels = datasets.map(data => {
+  return `${data.date.year}/${data.date.month}/${data.date.day}`
+})
 
 export const data:ChartData<"line"> = {
   labels: labels,
@@ -12,7 +13,7 @@ export const data:ChartData<"line"> = {
   datasets: [
     {
       fill: true,
-      tension: 0.3,
+      tension: 0.25,
       backgroundColor: (context: Context) => {
         const bgColor: string[] = [
           "rgba(255, 253, 254, 0.807)",
@@ -32,11 +33,7 @@ export const data:ChartData<"line"> = {
         return gradiantBg;
       },
       borderColor: "rgba(246, 246, 246, 0.647)",
-      data: [
-        120, 20, 50, 10, 30, 50, 100, 23, 32, 50, 18, 87, 120, 20, 50, 10, 30,
-        50, 100, 23, 32, 50, 18, 87, 120, 20, 50, 10, 30, 50, 100, 23, 32, 50, 18, 87, 120, 20, 50, 10, 30,
-        50, 100, 23, 32, 50, 18, 87,
-      ],
+      data:datasets.map(data=>data.price) ,
       pointStyle: false,
     },
   ],
@@ -60,7 +57,7 @@ export const options: ChartOptions<"line"> = {
   scales: {
     x: {
       min: 0,
-      max: 15,
+      max: 60,
       grid: {
         display: false,
       },
@@ -76,6 +73,11 @@ export const options: ChartOptions<"line"> = {
       position: "right",
       ticks: {
         color: "#fff",
+        callback: function (value) {
+          
+          return  Number(value).toFixed(3);
+      }
+     
       },
     
       grid: {
@@ -91,7 +93,7 @@ export const options: ChartOptions<"line"> = {
     mode: 'index',
     intersect: false
  },
-  onHover: function(evt, activeElements) {
+  onHover: function(_evt, activeElements) {
     // console.log(evt);
     activeElements[0].element.options.pointStyle = true;
     
