@@ -16,11 +16,17 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
+  width: 100vw;
   overflow-x:hidden;
-  
   padding: 0;
   margin: 0;
   color: white;
+}
+
+@media (min-width:810px) {
+  body{
+    height: 100%;
+  }
 }
 
 
