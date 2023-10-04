@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import {useState,useEffect} from "react"
-// import {
-//   Chart as ChartJS,
-// } from "chart.js";
+
 type WrapperType = {
   left: number;
   hidden:boolean
 }
+
+
 // type PriceLineType = {
 //   chartRef:ChartJS<"line", number[], string>
 // }

@@ -17,6 +17,7 @@ const Text = styled.p<TextProps>`
     font-size: ${(props) => (props.weight === "bold" ? "2.5rem" : "1.3rem")};
   }
 `;
+
 const HeadText = styled.p`
  font-size: 1.2rem;
  margin-inline: auto;
@@ -29,6 +30,7 @@ const Small = styled.small`
   color: #d4d4d4;
   font-size: 1.2rem;
 `;
+
 
 const Header = () => {
   return (
