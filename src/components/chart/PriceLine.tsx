@@ -7,9 +7,7 @@ type WrapperType = {
 }
 
 
-// type PriceLineType = {
-//   chartRef:ChartJS<"line", number[], string>
-// }
+
 
 const Wrapper = styled.div<WrapperType>`
   top: 15%;

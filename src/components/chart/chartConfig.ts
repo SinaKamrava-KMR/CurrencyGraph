@@ -54,6 +54,8 @@ export const options: ChartOptions<"line"> = {
     }
   },
 
+  
+
   scales: {
     x: {
       min: 0,
